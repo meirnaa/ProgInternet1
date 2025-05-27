@@ -31,13 +31,20 @@
     <!-- 5. -->
     <h2>Diferenças entre innerText, innerHTML e textContent.</h2>
     <strong>textContent:</strong>
-    retorna o texto ignorando estilos ou elementos html.
+    retorna todo o texto do elemento, ignorando estilos CSS e elementos HTML. Inclui até o conteúdo que está oculto na página.
     <br>
     <strong>innerText:</strong>
-    retorna o texto como ele aparece visualmente levando em conta o css.
+    retorna o texto visível para o usuário, ou seja, o que aparece visualmente na tela, levando em conta o CSS (como display: none, por exemplo).
     <br>
     <strong>innerHTML:</strong>
-    retorna o texto 
+    retorna todo o conteúdo HTML interno do elemento, incluindo tags, atributos e texto. Pode ser usado também para inserir elementos HTML dinamicamente.
     </p>
+
+    <!-- 6. -->
+    <p id="6-questao" style="color: red;"><strong>Clique no botão para mudar o texto para a cor rosa </strong></p>
+
+    <button type="button"
+    onclick="document.getElementById('6-questao').style.color = '#c02942'">
+    Click Me!</button>
 </body>
 </html>
