@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <!-- 2.b) -->
@@ -41,10 +42,27 @@
     </p>
 
     <!-- 6. -->
-    <p id="6-questao" style="color: red;"><strong>Clique no botão para mudar o texto para a cor rosa </strong></p>
+    <p id="6-questao" style="color: red;"><strong>Clique no botão para mudar o texto para a cor rosa</strong></p>
 
-    <button type="button"
-    onclick="document.getElementById('6-questao').style.color = '#c02942'">
-    Click Me!</button>
+    <button type="button" onclick="document.getElementById('6-questao').style.color = '#c02942'">Click Me!</button><br><br>
+
+    <!-- 7. -->
+    <label for="entrada">Texto original:</label>
+    <input type="text" id="entrada"><br><br>
+
+    <button onclick="copiarTexto()">Copiar em Caixa Alta</button><br><br>
+
+    <label for="saida">Texto em caixa alta:</label>
+    <input type="text" id="saida" readonly><br><br>
+
+    <!-- 8. -->
+    <button onclick="alterarBody()">Alterar contraste</button><br><br>
+
+    <button onclick="resetarBody()">Resetar contraste</button><br><br>
+
+    <!-- 9. -->
+    <button onclick="aumentarTamanho()">Aumentar texto</button><br><br>
+
+    <button onclick="diminuirTamanho()">Diminuir texto</button><br><br>
 </body>
 </html>
