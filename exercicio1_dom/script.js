@@ -40,7 +40,34 @@
         paragrafo.textContent = "";
     });
 
-    //5.
-    document.getElementById("exemplo").textContent;
-    document.getElementById("exemplo").innerText;
-    document.getElementById("exemplo").innerHTML;
+    //7.
+    function copiarTexto() {
+        var texto = document.getElementById("entrada").value;
+        var textoMaiusculo = texto.toUpperCase();
+        document.getElementById("saida").value = textoMaiusculo;
+    }
+
+    //8.
+    function alterarBody() {
+        document.body.classList.add("alto-contraste");
+    } 
+    
+    function resetarBody() {
+        document.body.classList.remove("alto-contraste");
+    }  
+
+    let tamanho_fonte = 14;
+
+    function aumentarTamanho() {
+      if (tamanho_fonte < 32) {
+        tamanho_fonte += 1;
+        document.body.style.fontSize = tamanho_fonte + "px";
+      }
+    }
+
+    function diminuirTamanho() {
+      if (tamanho_fonte > 10) {
+        tamanho_fonte -= 1;
+        document.body.style.fontSize = tamanho_fonte + "px";
+      }
+    }
