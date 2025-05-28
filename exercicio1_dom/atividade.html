@@ -8,61 +8,93 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!-- 2.b) -->
-    <h1>Exercício de Dom</h1>
-    <!-- 2.a) -->
-    <p id="p1"></p>    
-    <!-- 3. -->
-    <div id="paragrafos">
-        <h2>Contando Parágrafos</h2>
-        <p>Banana</p>
-        <p>Uva</p>
-        <p>Laranja e Pera.</p>
+    <div class="corpo">
+        <!-- 2.a) -->
+        <p id="p1"></p>    
+        
+        <!-- 3. -->
+        <p id="p2">3° questão</p>
+        <div id="paragrafos">
+            <p>🍌 Banana</p>
+            <p>🍇 Uva</p>
+            <p>🍋‍🟩 Limão</p>
+        </div>
+        <br>
+        <div id="resultado"></div>
+
+        <!-- 4. -->
+        <p id="p2">4° questão</p>
+        <p id="paragrafo">Clique no botão abaixo para alterar o texto deste parágrafo:</p><br>
+    
+        <button id="botao">Alterar texto</button>
+        <button id="botao_limpar">Limpar</button>
+
+        <!-- 5. -->
+        <p id="p2">5° questão</p>
+        <p id="questao5">
+        <strong>textContent:</strong>
+        retorna todo o texto do elemento, ignorando estilos CSS e elementos HTML. Inclui até o conteúdo que está oculto na página.
+        <br><br>
+        <strong>innerText:</strong>
+        retorna o texto visível para o usuário, ou seja, o que aparece visualmente na tela, levando em conta o CSS (como display: none, por exemplo).
+        <br><br>
+        <strong>innerHTML:</strong>
+        retorna todo o conteúdo HTML interno do elemento, incluindo tags, atributos e texto. Pode ser usado também para inserir elementos HTML dinamicamente.
+        </p>
+
+        <!-- 6. -->
+        <p id="p2">6° questão</p>
+        <p id="6-questao" style="color: red;"><strong>Clique no botão para mudar a cor do texto</strong></p>
+        <br><br>
+
+        <button type="button" id="botao-2">Alterar cor</button><br><br>
+
+        <!-- 7. -->
+        <p id="p2">7° questão</p>
+        <label for="entrada">Digite aqui o texto original:</label>
+        <br>
+        <textarea id="entrada" rows="1"></textarea><br>
+
+        <label for="saida">Clique no botão para ver o texto em caixa alta:</label>
+        <br>
+        <textarea id="saida" rows="1"></textarea><br><br>
+
+        <button onclick="copiarTexto()">Copiar</button><br>
+
+        <!-- 8. -->
+        <p id="p2">8° questão</p>
+        <button onclick="alterarBody()">Alterar contraste</button>
+
+        <button onclick="resetarBody()">Resetar contraste</button><br><br>
+
+        <!-- 9. -->
+        <p id="p2">9° questão</p>
+        <button onclick="aumentarTamanho()">Aumentar texto</button>
+
+        <button onclick="diminuirTamanho()">Diminuir texto</button><br><br>
+
+        <!-- 10. -->
+        <p id="p2">10° questão</p>
+        <div id="calculadora">
+
+            <label id="calc" for="num1">Calculadora</label><br>
+            <input type="number" id="num1"><br><br>
+            <input type="number" id="num2"><br><br>
+
+            <label><input type="radio" name="operacao" value="soma" checked> Soma</label><br>
+            <label><input type="radio" name="operacao" value="subtracao"> Subtração</label><br>
+            <label><input type="radio" name="operacao" value="multiplicacao"> Multiplicação</label><br>
+            <label><input type="radio" name="operacao" value="divisao"> Divisão</label><br><br>
+
+            <button onclick="calcular()">Calcular</button><br><br>
+
+            <p><strong id="valor">Resultado:</strong><strong id="valor-resultado"></strong></p>
+
+        </div>
+
+        <!-- 11. -->
+        <p id="p2">11° questão</p>
+
     </div>
-    <br>
-    <div id="resultado"></div>
-
-    <!-- 4. -->
-    <h2>Exemplo dos botões</h2>
-    <p id="paragrafo">Clique no botão abaixo para alterar o texto deste parágrafo:</p>
-  
-    <button id="botao">Clique aqui</button>
-    <button id="botao_limpar">Limpar</button>
-
-    <!-- 5. -->
-    <h2>Diferenças entre innerText, innerHTML e textContent.</h2>
-    <strong>textContent:</strong>
-    retorna todo o texto do elemento, ignorando estilos CSS e elementos HTML. Inclui até o conteúdo que está oculto na página.
-    <br>
-    <strong>innerText:</strong>
-    retorna o texto visível para o usuário, ou seja, o que aparece visualmente na tela, levando em conta o CSS (como display: none, por exemplo).
-    <br>
-    <strong>innerHTML:</strong>
-    retorna todo o conteúdo HTML interno do elemento, incluindo tags, atributos e texto. Pode ser usado também para inserir elementos HTML dinamicamente.
-    </p>
-
-    <!-- 6. -->
-    <p id="6-questao" style="color: red;"><strong>Clique no botão para mudar o texto para a cor rosa</strong></p>
-
-    <button type="button" onclick="document.getElementById('6-questao').style.color = '#c02942'">Click Me!</button><br><br>
-
-    <!-- 7. -->
-    <label for="entrada">Texto original:</label>
-    <input type="text" id="entrada"><br><br>
-
-    <button onclick="copiarTexto()">Copiar em Caixa Alta</button><br><br>
-
-    <label for="saida">Texto em caixa alta:</label>
-    <input type="text" id="saida" readonly><br><br>
-
-    <!-- 8. -->
-    <button onclick="alterarBody()">Alterar contraste</button><br><br>
-
-    <button onclick="resetarBody()">Resetar contraste</button><br><br>
-
-    <!-- 9. -->
-    <button onclick="aumentarTamanho()">Aumentar texto</button><br><br>
-
-    <button onclick="diminuirTamanho()">Diminuir texto</button><br><br>
 </body>
 </html>
