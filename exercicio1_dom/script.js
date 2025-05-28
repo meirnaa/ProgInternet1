@@ -84,43 +84,90 @@
 
     //10.
 
-function calcular() {
-    let num1 = parseFloat(document.getElementById("num1").value);
-    let num2 = parseFloat(document.getElementById("num2").value);
-    let operacoes = document.getElementsByName("operacao");
-    let resultado;
+    function calcular() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let operacoes = document.getElementsByName("operacao");
+        let resultado;
 
-    if (isNaN(num1) || isNaN(num2)) {
-        document.getElementById("valor").innerHTML = "Preencha todos os campos!";
-        document.getElementById("valor-resultado").innerHTML = "";
-        return;
-    }
-
-    let operacaoSelecionada = null;
-    for (let op of operacoes) {
-        if (op.checked) {
-            operacaoSelecionada = op.value;
-            break;
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("valor").innerHTML = "Preencha todos os campos!";
+            document.getElementById("valor-resultado").innerHTML = "";
+            return;
         }
+
+        let operacaoSelecionada = null;
+        for (let op of operacoes) {
+            if (op.checked) {
+                operacaoSelecionada = op.value;
+                break;
+            }
+        }
+
+        switch (operacaoSelecionada) {
+            case "soma":
+                resultado = num1 + num2;
+                break;
+            case "subtracao":
+                resultado = num1 - num2;
+                break;
+            case "multiplicacao":
+                resultado = num1 * num2;
+                break;
+            case "divisao":
+                resultado = num2 !== 0 ? (num1 / num2) : "Erro: divisão por zero!";
+                break;
+            default:
+                resultado = "Selecione uma operação.";
+        }
+
+        document.getElementById("valor").innerHTML = `Resultado:`;
+        document.getElementById("valor-resultado").innerHTML = ` ${resultado}`;
     }
 
-    switch (operacaoSelecionada) {
-        case "soma":
-            resultado = num1 + num2;
-            break;
-        case "subtracao":
-            resultado = num1 - num2;
-            break;
-        case "multiplicacao":
-            resultado = num1 * num2;
-            break;
-        case "divisao":
-            resultado = num2 !== 0 ? (num1 / num2) : "Erro: divisão por zero!";
-            break;
-        default:
-            resultado = "Selecione uma operação.";
+    //11.
+
+    function listarTexto() {
+        const input = document.getElementById("original");
+        const linhas = input.value.trim().split("\n");
+
+        for (let linha of linhas) {
+            const textoLimpo = linha.trim();
+            if (textoLimpo !== "") {
+                const li = document.createElement("li");
+                li.textContent = textoLimpo;
+                document.getElementById("lista").appendChild(li);
+            }
+        }
+
+        input.value = "";
     }
 
-    document.getElementById("valor").innerHTML = `Resultado:`;
-    document.getElementById("valor-resultado").innerHTML = ` ${resultado}`;
-}
+    function limparLista() {
+        var lista = document.getElementById("lista");
+        lista.textContent = "";
+    }
+
+    //12.
+
+    function listarSelect() {
+        const input = document.getElementById("original2");
+        const linhas = input.value.trim().split("\n");
+        const select = document.getElementById("lista-select");
+
+        for (let linha of linhas) {
+            const textoLimpo = linha.trim();
+            if (textoLimpo !== "") {
+                const option = document.createElement("option");
+                option.textContent = textoLimpo;
+                select.appendChild(option);
+            }
+        }
+
+        input.value = "";
+    }
+
+    function limparListaSelect() {
+        var lista = document.getElementById("lista-select");
+        lista.textContent = "";
+    }
