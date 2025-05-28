@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
     <div class="corpo">
@@ -94,7 +94,36 @@
 
         <!-- 11. -->
         <p id="p2">11° questão</p>
+        <label for="original">Digite aqui o texto original:</label>
+        <br>
+        <textarea id="original" rows="1"></textarea><br>
 
+        <label for="lista">Clique no botão para transformar em lista:</label>
+        <br>
+        <div id="listagem">
+            <ul id="lista"></ul>
+        </div>
+
+        <br>
+        <button onclick="listarTexto()">Listar</button>
+        <button onclick="limparLista()">Limpar</button>
+        <br>
+
+        <!-- 12. -->
+        <p id="p2">12° questão</p>
+        <label for="original2">Digite o texto (um por linha):</label><br>
+        <textarea id="original2" rows="3"></textarea><br>
+
+        <label for="lista-select">Clique no botão para adicionar ao select:</label>
+        <br>
+        <div id="listagem-select">
+            <select id="lista-select"></select>
+        </div>
+
+        <br>
+        <button onclick="listarSelect()">Transformar</button>
+        <button onclick="limparListaSelect()">Limpar</button>
+        <br>
     </div>
 </body>
 </html>
