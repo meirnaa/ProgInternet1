@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="corpo">
+
+        <p id="p1">Exercício <br>DOM 2</p>    
+
+        <!-- 1. -->
+        <p id="questao">1° questão</p>
+        <input id="mensagem" placeholder="Mensagem de erro"><br>
+        <input id="id" placeholder="Informe o id"><br>
+
+        <button id="botaoErro">Mostrar Erro</button>
+        <div id="mensagemErro" class="oculto"></div> 
+
+        <!-- 2. -->
+        <p id="questao">2° questão</p>
+        <input type="text" id="caixaDeTexto" placeholder="Digite o texto"><br>
+        <button id="botaoExibir">Exibir</button><br>
+        <div id="mensagemErro2" class="oculto"></div> 
+        <div id="conteudo"></div>
+
+        <!-- 3. -->
+        <p id="questao">3° questão</p>
+        <input id="interacoes" placeholder="Número de interações"><br>
+        <input id="visualizacoes" placeholder="Número de visualizações"><br>
+
+        <button id="botaoCalcular">Calcular engajamento</button>
+        <div id="mensagemErro3" class="oculto"></div> 
+        <div id="conteudo2"></div>
+
+        <!-- 4. -->
+        <p id="questao">4° questão</p>
+        <input type="file" id="uploadImagem" accept="image/*">
+        <div id="resultado"></div>
+        <button id="botaoImagem">Mostrar</button>
+
+        <!-- 5. -->
+        <p id="questao">5° questão</p>
+        <label>
+        Escolha um personagem:
+        <select class="personagens" name="ice-cream">
+            <option value="">Escolher</option>
+            <option value="hellokitty">Hello Kitty</option>
+            <option value="melody">My Melody</option>
+            <option value="kuromi">Kuromi</option>
+        </select>
+        </label>
+
+        <div id="result"></div><br><br>
+
+        <!-- 6. -->
+        <p id="questao">6° questão</p>
+
+        <label>Escolha sua(s) redes favoritas:</label>
+        <div id="redessociais">
+            <div class="redesocial">
+                <input type="checkbox" id="facebook" name="redesSociais" value="Facebook">
+                <label for="facebook">Facebook</label>
+            </div>
+
+            <div class="redesocial">
+                <input type="checkbox" id="twitter" name="redesSociais" value="Twitter">
+                <label for="twitter">Twitter</label>
+            </div>
+
+            <div class="redesocial">
+                <input type="checkbox" id="instagram" name="redesSociais" value="Instagram">
+                <label for="instagram">Instagram</label>
+            </div>
+
+            <div class="redesocial">
+                <input type="checkbox" id="linkedin" name="redesSociais" value="LinkedIn">
+                <label for="linkedin">LinkedIn</label>
+            </div>
+
+            <div class="redesocial">
+                <input type="checkbox" id="tiktok" name="redesSociais" value="TikTok">
+                <label for="tiktok">TikTok</label>
+            </div>
+        </div>
+
+        <button type="button" id="enviarBtn">Enviar Seleção</button>
+        <div class = "oculto" id="mensagemErro4"></div>
+        <div id="redesSelecionadas"></div>
+
+        <!-- 7. -->
+        <p id="questao">7° questão</p>
+        <input id="hashtag1" placeholder="Digite uma hashtag"><br>
+        <button type="button" id="adicionarBtn1">Adicionar</button>
+        <button type="button" id="limparBtn1">Limpar todas</button><br>
+        <div id="hashtags1" style="display: none;">
+            <label>Hashtags:</label><br><br>
+            <select name="hashtag1s" id="select1" size="5" ></select>
+        </div>
+
+        <!-- 8. -->
+        <p id="questao">8° e 9° questões</p>
+        <input id="hashtag2" placeholder="Digite uma hashtag"><br>
+        <button type="button" id="adicionarBtn2">Adicionar</button>
+        <button type="button" id="limparBtn2">Limpar todas</button><br>
+        <div id="hashtags2" style="display: none;">
+            <label>Hashtags:</label><br><br>
+            <select name="hashtags2" id="select2" size="5"></select>
+        </div>
+        <div class = "oculto" id="mensagemErro5"></div>
+
+        <!-- 9. -->
+        <button type="button" id="removerBtn">Remover selecionada</button><br>
+
+        <!-- 10. e 11. -->
+        <p id="questao">10° e 11° questões</p>
+        <div class="container">
+            <div>
+            <label for="ativosDisponiveis">Ativos Disponíveis:</label>
+            <select id="ativosDisponiveis" size="10" multiple>
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="GOOGL">Google (GOOGL)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+                <option value="MSFT">Microsoft (MSFT)</option>
+                <option value="TSLA">Tesla (TSLA)</option>
+                <option value="BRK.B">Berkshire Hathaway (BRK.B)</option>
+                <option value="FB">Meta (FB)</option>
+                <option value="V">Visa (V)</option>
+                <option value="JNJ">Johnson & Johnson (JNJ)</option>
+                <option value="WMT">Walmart (WMT)</option>
+            </select>
+            </div>
+            <div class="buttons">
+            <button id="moverParaDireitaBtn"><strong>></strong></button>
+            <button id="moverParaEsquerdaBtn"><strong><</strong></button>
+            </div>
+            <div>
+            <label for="carteiraInvestimentos" >Carteira de
+            Investimentos:</label>
+            <select id="carteiraInvestimentos" size="10" multiple></select>
+            </div>
+        </div>        
+        <div class = "oculto" id="mensagemErro6"></div>
+
+
+    </div>
+</body>
+</html>
