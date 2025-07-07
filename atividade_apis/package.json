@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "inferencejs": "^1.0.21"
+  },
+  "name": "atividade_apis",
+  "version": "1.0.0",
+  "main": "atividade_apis.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": ""
+}

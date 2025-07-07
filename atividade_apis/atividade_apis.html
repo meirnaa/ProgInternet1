@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de APIs</title>
+  <script src="config.js" defer></script>
+  <script src="atividade_apis.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Exemplo de Integração com APIs</h1>
+  <h3>Grupo: Meir, Teresa, Lina & Luana</h3>
+
+  <!-- Demonstração Curl -->
+  <section>
+    <h2>🖥️ Demonstração Curl</h2>
+    <p>Ferramenta de linha de comando para fazer requisições HTTP, usada no terminal ou em scripts de servidores.</p>
+    <h4>Exemplo Curl:</h4>
+    <pre>
+curl https://catfact.ninja/fact
+    </pre>
+  </section>
+
+  <!-- 1. Cat Fact -->
+  <section>
+    <h2>📝 Cat Facts API</h2>
+      <p>API gratuita que permite que você recupere informações divertidas, educativas ou surpreendentes sobre o comportamento, características e curiosidades dos gatos aleatoriamente.</p>
+      <p>Clique no botão para ver um fato aleatório sobre gatos.</p>
+      <button id="load-cat-facts">Ver fato</button>
+      <p id="catFactResultado" style="margin-top: 15px; font-style: italic;"></p>
+  </section>
+
+  <!-- 2. Cat API -->
+  <section>
+    <h2>🐱 The Cat API</h2>
+    <p>API para obter imagens e informações sobre gatos. Requer uma API Key (gratuita).</p>
+    <p>Digite o nome da raça (em inglês, ex: `bengal`, `siamese`, `siberian`):</p>
+    <input type="text" id="catBreedInput" placeholder="Digite a raça..." />
+    <button id="load-cat">Ver gato da raça</button>
+    <div id="catResult" style="margin-top: 20px;"></div>
+  </section>
+
+  <!-- 3. Dog API -->
+  <section>
+    <h2>🐶 Dog API</h2>
+    <p>API gratuita para obter imagens aleatórias de cães.</p>
+    <p>Digite uma raça de cachorro (em inglês, ex: `beagle`, `husky`, `labrador`):</p>
+    <input type="text" id="dogBreedInput" placeholder="Digite a raça..." />
+    <button id="load-dog">Ver cachorro da raça</button>
+    <div id="dogResult" style="margin-top: 20px;"></div>
+  </section>
+
+  <!-- 4. Harvard Art Museums API -->
+  <section>
+    <h2>🎨 Harvard Art Museums API</h2>
+    <p>API pública da Universidade de Harvard para acessar o acervo digital do Museu de Arte de Harvard. Requer uma API Key (gratuita), enviada depois de preencher um formulário.</p>
+    <p>🌍 Buscar obras por cultura</p>
+    <input type="text" id="input-culture" placeholder="Ex: Dutch, Italian, French" />
+    <button id="load-obras">Buscar obras</button>
+
+    <div id="resultadoObras" style="margin-top: 20px;"></div>
+  </section>
+</body>
+</html>
