@@ -11,8 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function getById(id) {
     return document.getElementById(id);
 }
-const apiUrl = window.location.hostname === 'localhost'
-  ? 'http://localhost:10000/socialifpi/postagem'
+const apiUrl = 'http://localhost:10000/socialifpi/postagem'
   : 'https://socialifpi-emkn.onrender.com/socialifpi/postagem';
 var Reacao;
 (function (Reacao) {
