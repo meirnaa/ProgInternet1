@@ -14,6 +14,7 @@
         <header>
             <h1>Social IFPI</h1>
             <p>Bem-vindo ao blog de tecnologia e inovação do IFPI</p>
+            <button id="temaToggle" class="tema-btn">🌙</button>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -47,6 +48,42 @@
         </footer>
     </div>
     <script src="app.js"></script>
+    <script>
+            const botao = document.getElementById('temaToggle');
+            const root = document.documentElement;
+            let escuro = false;
+
+            const temaClaro = {
+                "--cor-principal": "#A7BED3",
+                "--cor-secundaria": "#D6E6F2",
+                "--cor-fundo": "#F5F9FC",
+                "--cor-texto": "#34495E",
+                "--cor-texto-secundario": "#6C7A89",
+                "--cor-borda": "#C2D9EB",
+                "--cor-hover": "#9CBED9"
+            };
+
+            const temaEscuro = {
+                "--cor-principal": "#1a1a2e",
+                "--cor-secundaria": "#16213e",
+                "--cor-fundo": "#0f3460",
+                "--cor-texto": "#e0e0e0",
+                "--cor-texto-secundario": "#b0b0b0",
+                "--cor-borda": "#2a2a40",
+                "--cor-hover": "#243b55"
+            };
+
+            botao.addEventListener("click", () => {
+                escuro = !escuro;
+                const tema = escuro ? temaEscuro : temaClaro;
+
+                for (let prop in tema) {
+                root.style.setProperty(prop, tema[prop]);
+                }
+
+                botao.textContent = escuro ? "☀" : "🌙";
+            });
+    </script>
 </body>
 
 </html>
