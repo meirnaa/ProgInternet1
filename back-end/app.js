@@ -132,8 +132,8 @@ app.post(PATH_REAGIR, (req, res) => {
     const postagemAtualizada = repositorio.consultar(id);
     res.json({ message: 'Reação adicionada com sucesso', reacoes: postagemAtualizada === null || postagemAtualizada === void 0 ? void 0 : postagemAtualizada.getReacoes() });
 });
-// Inicializar o servidor na porta 3000
-const PORT = 3000;
+// Inicializar o servidor
+const PORT = process.env.PORT || 3000;;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
