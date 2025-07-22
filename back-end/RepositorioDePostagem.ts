@@ -82,13 +82,11 @@ export class RepositorioDePostagens {
         return postagem;
     }
 
-    public alterar(id: number, titulo: string, conteudo: string, data: Date, curtidas: number): boolean {
+    public alterar(id: number, titulo: string, conteudo: string): boolean {
         const postagem = this.consultar(id);
         if (postagem) {
             postagem['titulo'] = titulo;
             postagem['conteudo'] = conteudo;
-            postagem['data'] = data;
-            postagem['curtidas'] = curtidas;
             this.salvarDados();
             return true;
         }
@@ -144,29 +142,6 @@ export class RepositorioDePostagens {
             return postagem.getCurtidas();
         }
         return null;
-    }
-
-    private gerarDataAleatoria(anosPassados: number = 5): Date {
-        const hoje = new Date();
-        const anoInicial = hoje.getFullYear() - anosPassados;
-        const anoAleatorio = Math.floor(Math.random() * (hoje.getFullYear() - anoInicial)) + anoInicial;
-        const mesAleatorio = Math.floor(Math.random() * 12);
-        const diaAleatorio = Math.floor(Math.random() * 28) + 1;
-        return new Date(anoAleatorio, mesAleatorio, diaAleatorio);
-    }
-
-    public povoar(): void {
-        this.incluir(new Postagem(
-            1,
-            'A Importância da Educação',
-            'A educação é a base para uma sociedade mais justa e equitativa. ' +
-            'Ela promove o desenvolvimento individual e coletivo, ' +
-            'permitindo que pessoas realizem seu potencial. ' +
-            'Investir em educação é investir no futuro de todos nós.',
-            this.gerarDataAleatoria(),
-            10
-        ));
-        // ... (outras postagens de exemplo)
     }
 
     public listar(): Postagem[] {
