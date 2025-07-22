@@ -118,14 +118,14 @@ function listarPostagens() {
                             denunciasContainer.remove();
                         }
                     });
-                    // ========== MENU KEBAB ========== questão 3
+                    // ========== MENU ========== questão 3
                     const menuContainer = document.createElement('div');
-                    menuContainer.className = 'kebab-menu-container';
+                    menuContainer.className = 'menu-container';
                     const botaoMenu = document.createElement('button');
-                    botaoMenu.className = 'kebab-button';
+                    botaoMenu.className = 'menu-button';
                     botaoMenu.textContent = '⋮';
                     const menuDropdown = document.createElement('ul');
-                    menuDropdown.className = 'kebab-dropdown';
+                    menuDropdown.className = 'menu-dropdown';
                     menuDropdown.style.display = 'none';
                     const itemExcluir = document.createElement('li');
                     itemExcluir.textContent = 'Excluir';
@@ -149,6 +149,11 @@ function listarPostagens() {
                             }
                         }
                     }));
+                    const itemAlterar = document.createElement('li');
+                    itemAlterar.textContent = 'Alterar';
+                    itemAlterar.addEventListener('click', () => {
+                        exibirFormularioEdicao(postagem, article);
+                    });
                     const itemDenunciar = document.createElement('li');
                     itemDenunciar.textContent = 'Denunciar';
                     itemDenunciar.addEventListener('click', () => denunciarPostagem(postagem.id, article));
@@ -162,6 +167,7 @@ function listarPostagens() {
                         window.open(whatsappUrl, '_blank');
                     });
                     menuDropdown.appendChild(itemExcluir);
+                    menuDropdown.appendChild(itemAlterar);
                     menuDropdown.appendChild(itemDenunciar);
                     menuDropdown.appendChild(itemCompartilhar);
                     botaoMenu.addEventListener('click', () => {
@@ -174,7 +180,7 @@ function listarPostagens() {
                     });
                     menuContainer.appendChild(botaoMenu);
                     menuContainer.appendChild(menuDropdown);
-                    // ========== FIM MENU KEBAB ==========
+                    // ========== FIM MENU ==========
                     // Adiciona elementos ao artigo
                     article.appendChild(titulo);
                     article.appendChild(conteudo);
@@ -480,6 +486,72 @@ function adicionarComentario(postagemId, autor, texto) {
         }
     });
 }
+function exibirFormularioEdicao(postagem, articleElement) {
+    if (articleElement.querySelector('.form-denuncia-container'))
+        return;
+    const container = document.createElement('div');
+    container.className = 'form-denuncia-container';
+    const box = document.createElement('div');
+    box.className = 'form-denuncia-box';
+    const titulo = document.createElement('h3');
+    titulo.className = 'form-denuncia-titulo';
+    titulo.textContent = 'Alterar Postagem';
+    const fechar = document.createElement('span');
+    fechar.className = 'form-denuncia-fechar';
+    fechar.textContent = '×';
+    fechar.addEventListener('click', () => {
+        container.remove();
+    });
+    const form = document.createElement('form');
+    form.className = 'form-denuncia';
+    const inputTitulo = document.createElement('input');
+    inputTitulo.type = 'text';
+    inputTitulo.value = postagem.titulo;
+    inputTitulo.required = true;
+    inputTitulo.className = 'input-denuncia';
+    const textareaConteudo = document.createElement('textarea');
+    textareaConteudo.value = postagem.conteudo;
+    textareaConteudo.required = true;
+    textareaConteudo.rows = 4;
+    textareaConteudo.className = 'textarea-denuncia';
+    const botaoSalvar = document.createElement('button');
+    botaoSalvar.type = 'submit';
+    botaoSalvar.textContent = 'Salvar Alterações';
+    botaoSalvar.className = 'botao-enviar-denuncia';
+    form.appendChild(inputTitulo);
+    form.appendChild(textareaConteudo);
+    form.appendChild(botaoSalvar);
+    form.addEventListener('submit', (e) => __awaiter(this, void 0, void 0, function* () {
+        e.preventDefault();
+        try {
+            yield atualizarPostagem(postagem.id, inputTitulo.value, textareaConteudo.value);
+            listarPostagens();
+        }
+        catch (error) {
+            console.error('Erro ao atualizar postagem:', error);
+            alert('Erro ao atualizar postagem.');
+        }
+    }));
+    box.appendChild(titulo);
+    box.appendChild(fechar);
+    box.appendChild(form);
+    container.appendChild(box);
+    articleElement.appendChild(container);
+}
+function atualizarPostagem(id, titulo, conteudo) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`${apiUrl}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ titulo, conteudo })
+        });
+        if (!response.ok) {
+            throw new Error('Falha ao atualizar a postagem');
+        }
+    });
+}
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     listarPostagens();
@@ -488,3 +560,4 @@ document.addEventListener('DOMContentLoaded', () => {
         botaoNovaPostagem.addEventListener('click', incluirPostagem);
     }
 });
+
