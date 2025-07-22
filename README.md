@@ -1,4 +1,7 @@
-Trabalho final de Programação para Internet 1  
-Alunas: Lina Gabrielly, Luana Ferreira, Meir Naã e Teresa Raquel
+# Link do Vídeo: https://drive.google.com/file/d/10VoJJiuiCqJYV0khcrVs-fNgt8kVEqCx/view?usp=drive_link
 
-#Video: https://drive.google.com/file/d/10VoJJiuiCqJYV0khcrVs-fNgt8kVEqCx/view?usp=drive_link
+Componentes
+* Lina Gabrielly
+* Meir Naa
+* Teresa Fontenele
+* Luana Ferreira
