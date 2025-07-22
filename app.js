@@ -30,6 +30,7 @@ function listarPostagens() {
                 postagensElement.innerHTML = '';
                 postagens.forEach(postagem => {
                     const article = document.createElement('article');
+                    article.id = `post-${postagem.id}`;
                     article.style.position = 'relative';
                     // Cria elementos da postagem
                     const titulo = document.createElement('h2');
@@ -161,7 +162,7 @@ function listarPostagens() {
                     itemCompartilhar.innerHTML = 'Enviar <i class="fab fa-whatsapp" style="color: green; margin-left: 4px;"></i>';
                     itemCompartilhar.style.marginTop = '5px';
                     itemCompartilhar.addEventListener('click', () => {
-                        const mensagem = `Confira essa postagem: ${postagem.titulo} \nhttps://meirnaa.github.io/ProgInternet1/`;
+                        const mensagem = `Confira essa postagem: ${postagem.titulo} \nhttps://meirnaa.github.io/ProgInternet1/#post-${postagem.id}`;
                         const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
                         window.open(whatsappUrl, '_blank');
                     });
@@ -554,6 +555,24 @@ function atualizarPostagem(id, titulo, conteudo) {
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     listarPostagens();
+    const botaoNovaPostagem = getById('botaoNovaPostagem');
+    if (botaoNovaPostagem) {
+        botaoNovaPostagem.addEventListener('click', incluirPostagem);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    listarPostagens().then(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const elemento = document.querySelector(hash);
+            if (elemento) {
+                elemento.scrollIntoView({ behavior: 'smooth' });
+                elemento.style.border = '2px solid #00f'; // opcional: destaque visual
+            }
+        }
+    });
+
     const botaoNovaPostagem = getById('botaoNovaPostagem');
     if (botaoNovaPostagem) {
         botaoNovaPostagem.addEventListener('click', incluirPostagem);
