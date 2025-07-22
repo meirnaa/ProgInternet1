@@ -12,7 +12,7 @@ function getById(id) {
     return document.getElementById(id);
 }
 const apiUrl = window.location.hostname === 'localhost'
-  ? 'http://localhost:3000/socialifpi/postagem'
+  ? 'http://localhost:10000/socialifpi/postagem'
   : 'https://socialifpi-emkn.onrender.com/socialifpi/postagem';
 var Reacao;
 (function (Reacao) {
