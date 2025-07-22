@@ -161,7 +161,7 @@ function listarPostagens() {
                     itemCompartilhar.innerHTML = 'Enviar <i class="fab fa-whatsapp" style="color: green; margin-left: 4px;"></i>';
                     itemCompartilhar.style.marginTop = '5px';
                     itemCompartilhar.addEventListener('click', () => {
-                        const url = `${window.location.origin}/postagem/${postagem.id}`;
+                        const url = `$https://meirnaa.github.io/ProgInternet1/`;
                         const mensagem = `Confira essa postagem: ${postagem.titulo}\n${url}`;
                         const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
                         window.open(whatsappUrl, '_blank');
