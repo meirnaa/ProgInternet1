@@ -4,5 +4,4 @@ Componentes:
 * Lina Gabrielly
 * Meir Naã
 * Teresa Raquel
-* 
-* Luana Ferreira
+* Luana Ferreira
