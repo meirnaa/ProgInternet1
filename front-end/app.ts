@@ -2,7 +2,9 @@ function getById(id: string): HTMLElement | null {
     return document.getElementById(id);
 }
 
-const apiUrl = 'http://localhost:3000/socialifpi/postagem';
+const apiUrl = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000/socialifpi/postagem'
+  : 'https://socialifpi-emkn.onrender.com/socialifpi/postagem';
 
 interface Comentario {
     autor: string;
