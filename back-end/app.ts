@@ -20,6 +20,7 @@ const PATH_COMENTAR = PATH_ID + '/comentar';
 const PATH_REAGIR = PATH_ID + '/reagir';
 const PATH_DENUNCIAR = PATH_ID + '/denunciar';
 
+// Endpoint para adicionar comentário em uma postagem
 app.post(PATH_COMENTAR, (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const { autor, texto } = req.body;
@@ -46,7 +47,7 @@ app.get(PATH_ID + '/comentarios', (req: Request, res: Response) => {
     res.json(postagem.getComentarios());
 });
 
-//Denunciar + denuncias
+//Denunciar
 app.post(PATH_DENUNCIAR, (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const { autor, texto } = req.body;
@@ -61,6 +62,7 @@ app.post(PATH_DENUNCIAR, (req: Request, res: Response) => {
     res.status(200).json({ message: 'Denúncia adicionada com sucesso' });
 });
 
+// listar denuncias
 app.get(PATH_ID + '/denuncias', (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const postagem = repositorio.consultar(id);
@@ -80,20 +82,6 @@ app.get(PATH, (req: Request, res: Response) => {
     res.json(postagens);
 });
 
-// Endpoint para consultar uma postagem pelo ID
-app.get(PATH_ID, (req: Request, res: Response) => {
-    const id = parseInt(req.params.id);
-    const postagem = repositorio.consultar(id);
-    
-    if (!postagem) {
-        res.status(404).json({ message: 'Postagem não encontrada' });
-        return;
-        
-    } 
-
-    res.json(postagem);
-});
-
 // Endpoint para incluir uma nova postagem
 app.post(PATH, (req: Request, res: Response) => {
     const { titulo, conteudo, data, curtidas, reacoes } = req.body;
@@ -105,9 +93,9 @@ app.post(PATH, (req: Request, res: Response) => {
 // Endpoint para alterar uma postagem existente
 app.put(PATH_ID, (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
-    const { titulo, conteudo, data, curtidas } = req.body;
+    const { titulo, conteudo } = req.body;
     
-    const sucesso = repositorio.alterar(id, titulo, conteudo, data, curtidas);
+    const sucesso = repositorio.alterar(id, titulo, conteudo);
     if (!sucesso) {
         res.status(404).json({ message: 'Postagem não encontrada' });
         return;
