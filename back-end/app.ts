@@ -12,9 +12,6 @@ app.use(express.json());
 // Configuração básica do CORS
 app.use(cors());
 
-// Povoar o repositório com postagens iniciais
-repositorio.povoar();
-
 // Endpoint para raiz
 const PATH: string = '/socialifpi/postagem';
 const PATH_ID: string = PATH + '/:id';
