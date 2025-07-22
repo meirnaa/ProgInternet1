@@ -3,5 +3,5 @@
 Componentes
 * Lina Gabrielly
 * Meir Naa
-* Teresa Fontenele
+* Teresa Fontenele  
 * Luana Ferreira
